@@ -9,8 +9,8 @@ def  welcome(request):
     return render(request, 'index.html')
 
 #  python3 -m pip install africastalking
-AfricasUsername='tuganimana01@gmail.com'
-api_key ='1526a36fc4c257d18d07bcfd53b0d18324ce969a5cd6981a35abfa6028b259ac'
+AfricasUsername='rukundojamie@gmail.com'
+api_key ='0e2088e0e7563fe5fd0cc9007cd3e9061a326a1647fecaa45d2f81b518ac35dc'
 africastalking.initialize(AfricasUsername,api_key)
 
 @csrf_exempt
@@ -25,97 +25,50 @@ def ussdApp(request):
         level = text.split('*')
         category = text[:3]
         response =""
-        #  main menu for our application
+        #  our application menu
         if text == '':
-            response =  "CON Murakaza neza kuri Idafarm \n"
-            response += "1. Kwandikisha igihingwa \n"
-            response += "2. Kumenya ingengabihe \n"
+            response =  "CON Ikaze kuri chiafarm \n"
+            response += "1. Kugura igihingwa cya chia \n"
+            response += "2. Kumenya amakuru y'igihingwa \n"
         elif text == '1':
 
-            response = "CON Hitamo igihingwa \n"
-            response += "1. Ibinyomoro \n"
-            response += "2. Indimu"
+            response = "CON Hitamo ubwoko bw'igihingwa \n"
+            response += "1. Imbuto za chia z'umweru \n"
+            response += "2. Imbuto za chia z'umukara"
         elif text == '1*1':
-            product="Ibinyomoro"
-            response = "CON shyiramo ubuso bw'ubutaka bwawe bw' "+str(product)+"\n"
+            product="Imbuto za chia z'umweru "
+            response = "CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
         elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
-            response = "CON Uwo mubufatanyije \n"
+            response = "CON Shyiramo amafaranga \n"
         elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            response = "CON Shyiramo nimero y'irangamuntu yuwo mufatanyije \n"
-        elif category =='1*1' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            # save the data into the database
-            category='Ibinyomoro'
-            sizeOfland=level[2]
-            names= level[3]
-            idnumber = level[4]
-            insert = Idafarmuser(sessiondId=session_id,
-            serviceCode = service_code,
-            phoneNumber=phone_number,
-            level=level,
-            category=category,
-            sizeOfland=sizeOfland,
-            names=names,
-            idnumber=idnumber,
-            )
-            insert.save()
-            response = "END Murakoze kwiyandikisha kuri Ida farm \n"
+            response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
 
 
         elif text == '1*2':
-            product ="Indimu"
-            response ="CON shyiramo ubuso bw'ubutaka bwawe bw' "+str(product)+"\n"
+            product ="Imbuto za chia z'umukara"
+            response ="CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
         elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
-            response = "CON Uwo mubufatanyije \n"
+            response = "CON Shyiramo amafaranga  \n"
         elif category =='1*2' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            response = "CON Shyiramo nimero y'irangamuntu yuwo mufatanyije \n"
-        elif category =='1*2' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            category='Indimu'
-            sizeOfland=level[2]
-            names= level[3]
-            idnumber = level[4]
-            insert = Idafarmuser(sessiondId=session_id,
-            serviceCode = service_code,
-            phoneNumber=phone_number,
-            level=level,
-            category=category,
-            sizeOfland=sizeOfland,
-            names=names,
-            idnumber=idnumber,
-            )
-            insert.save()
-            response = "END Murakoze kwiyandikisha kuri Ida farm \n"
+            response = "END Murakoze kugura imbuto za chia kuri chiafarm! \n"
          
-        #  ======================== INGENGABIHE==================
+        #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
         elif text == '2':
-            response = "CON Hitamo igihe \n "
-            response += "1. Rimwe mukwezi \n"
-            response += "2. Kabiri Mukwezi \n"
-            response += "3. Buri gihe"
-        elif text == '2*1':
-            # save the data
-            insertData(
-                category='Rimwe',
-                sessionID=session_id,
-                phoneNumber=phone_number
-            )
-            response ="END Murakoze , tuzajya tubagezaho amakuru ku iteganyagihe rimwe mukwezi"
-        elif text == '2*2':
-            insertData(
-                category='Kabiri',
-                sessionID=session_id,
-                phoneNumber=phone_number
-            )
-            response ="END Murakoze , tuzajya tubagezaho amakuru ku iteganyagihe kabiri mukwezi"
-        elif text == '2*3':
-            insertData(
-                category='Burigihe',
-                sessionID=session_id,
-                phoneNumber=phone_number
-            )
-            response ="END Murakoze , tuzajya tubagezaho amakuru ku iteganyagihe Buri munsi"
-
-        else:
-            response = "END Ukanze ibitaribyo, ongera mukanya"
-        return HttpResponse(response)
+            response ="CON Igihingwa cya chia seed ni imbuto zifite ibara ry'umweru cq ry'umukara zikomoka"
+            response =" muri Amarica y'amajyepfo ho muri Mexico na Quatemara. Urubuto rumwe rwa chia seed"
+            response =" rupima umurambararo wa milimetero imwe (1). Ni ubwoko bw'imbuto z'ibinyampeke."
+            response=" Zishobara kuribwa uko zakabaye zivanywe mu murima, zishobora gusebwamo "
+            response=" ifu cyangwa se zigakorwamo amavuta yaba ayo kurya cyangwa se ayo kwisiga."
+            response=" Izi mbuto iyo uzishyize mu mazi, rumwe rukurura amazi akubye incuro 12 uburemere "
+            response=" bwarwo rukabyimba. izi mbuto ni igihingwa kerera amezi atatu gusa kandi ikiro kimwe"
+            response=" cyazo kigura nibura amafaranga y'u Rwanda 3000. ni ukuvuga ko ikiro kimwe cya "
+            response=" chia seed kinganya agaciro mu mafaranga n'ibiro 15 by'ikawa y'ibitumbwe yereye"
+            response=" amezi 12, kingana n'ibiro 20 by'ibijumba, kingana n'ibiro 5 by'ibishyimbo uramutse"
+            response=" ubaze ku mafaranga 400 kuri buri kiro. ikiro cya chia seed kinganya amafaranga n'ibiro"
+            response=" 3 by'umuceri cyangwa se ibiro 7 by'ubugari. ibiro 2 by'izi mbuto bitera hegitari "
+            response=" y'ubutaka maze mu mezi atatu zikaba zeze ibiro igihumbi! Ikindi kiza kurusha ni uko"
+            response=" igihingwa cya chia seed gihingwa hadakoreshejwe ifumbire mva ruganda cyangwa se imiti"
+            response=" yica udukoko. Uburyo zihingwa, barazitera bagashyiramo ifumbire y'imborera bakazuhira "
+            response=" bihagije ubundi zikera. Mu Rwanda izi mbuto zahageze mu mwaka wa 2017."
     else:
         return HttpResponse('we are on ussd app')
