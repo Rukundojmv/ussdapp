@@ -4,10 +4,6 @@ import africastalking
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
 from .iteganya import *
-# Create your views here.
-def  welcome(request):
-    return render(request, 'index.html')
-
 #  python3 -m pip install africastalking
 AfricasUsername='rukundojamie@gmail.com'
 api_key ='0e2088e0e7563fe5fd0cc9007cd3e9061a326a1647fecaa45d2f81b518ac35dc'
