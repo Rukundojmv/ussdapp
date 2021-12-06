@@ -34,18 +34,18 @@ def ussdApp(request):
         elif text == '1*1':
             product="Imbuto za chia z'umweru "
             response = "CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
-        elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
+        elif category =='1*1':
             response = "CON Shyiramo amafaranga \n"
-        elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
+        elif category =='1*1':
             response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
 
 
         elif text == '1*2':
             product ="Imbuto za chia z'umukara"
             response ="CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
-        elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
+        elif category =='1*2':
             response = "CON Shyiramo amafaranga  \n"
-        elif category =='1*2' and int(len(level)) == 4 and str(level[3]) in  str(level):
+        elif category =='1*2':
             response = "END Murakoze kugura imbuto za chia kuri chiafarm! \n"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
