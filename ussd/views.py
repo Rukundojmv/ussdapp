@@ -66,5 +66,6 @@ def ussdApp(request):
             response=" igihingwa cya chia seed gihingwa hadakoreshejwe ifumbire mva ruganda cyangwa se imiti"
             response=" yica udukoko. Uburyo zihingwa, barazitera bagashyiramo ifumbire y'imborera bakazuhira "
             response=" bihagije ubundi zikera. Mu Rwanda izi mbuto zahageze mu mwaka wa 2017."
+        return HttpResponse(response)
     else:
         return HttpResponse('we are on ussd app')
