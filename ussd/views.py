@@ -13,7 +13,6 @@ africastalking.initialize(AfricasUsername,api_key)
 def ussdApp(request):
 
     if request.method == 'POST':
-
         session_id = request.POST.get("sessionId")
         service_code = request.POST.get("serviceCode")
         phone_number =request.POST.get("phoneNumber")
@@ -21,36 +20,48 @@ def ussdApp(request):
         level = text.split('*')
         category = text[:3]
         response =""
+
         #  our application menu
+
         if text == '':
             response =  "CON Ikaze kuri chiafarm \n"
             response += "1. Kugura igihingwa cya chia \n"
             response += "2. Kumenya amakuru y'igihingwa \n"
-        elif text == '1':
 
+
+        elif text == '1':
             response = "CON Hitamo ubwoko bw'igihingwa \n"
             response += "1. Imbuto za chia z'umweru \n"
             response += "2. Imbuto za chia z'umukara"
+
+
         elif text == '1*1':
             product="Imbuto za chia z'umweru "
             response = "CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
-        elif category =='1*1':
+
+
+        elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
             response = "CON Shyiramo amafaranga \n"
-        elif category =='1*1':
+
+        elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
             response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
 
 
         elif text == '1*2':
             product ="Imbuto za chia z'umukara"
             response ="CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
-        elif category =='1*2':
+
+
+        elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
             response = "CON Shyiramo amafaranga  \n"
-        elif category =='1*2':
+
+        elif category =='1*2' and int(len(level)) == 4 and str(level[3]) in  str(level):
             response = "END Murakoze kugura imbuto za chia kuri chiafarm! \n"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
+
         elif text == '2':
-            response ="CON Igihingwa cya chia seed ni imbuto zifite ibara ry'umweru cq ry'umukara zikomoka"
+            response = "CON Igihingwa cya chia seed ni imbuto zifite ibara ry'umweru cq ry'umukara zikomoka"
             response += "muri Amarica y'amajyepfo ho muri Mexico na Quatemara. Urubuto rumwe rwa chia seed"
             response += "rupima umurambararo wa milimetero imwe (1). Ni ubwoko bw'imbuto z'ibinyampeke."
             response += "Zishobara kuribwa uko zakabaye zivanywe mu murima, zishobora gusebwamo "
@@ -66,6 +77,5 @@ def ussdApp(request):
             response += "igihingwa cya chia seed gihingwa hadakoreshejwe ifumbire mva ruganda cyangwa se imiti"
             response += "yica udukoko. Uburyo zihingwa, barazitera bagashyiramo ifumbire y'imborera bakazuhira "
             response += "bihagije ubundi zikera. Mu Rwanda izi mbuto zahageze mu mwaka wa 2017."
+        
         return HttpResponse(response)
-    else:
-        return HttpResponse('we are on ussd app')
