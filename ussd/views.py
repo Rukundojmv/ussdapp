@@ -3,7 +3,6 @@ from django.shortcuts import render
 import africastalking
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
-from .iteganya import *
 #  python3 -m pip install africastalking
 AfricasUsername='rukundojamie@gmail.com'
 api_key ='0e2088e0e7563fe5fd0cc9007cd3e9061a326a1647fecaa45d2f81b518ac35dc'
@@ -36,8 +35,8 @@ def ussdApp(request):
 
 
         elif text == '1*1':
-            product="Imbuto za chia z'umweru "
-            response = "CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
+            product="imbuto za chia z'umweru "
+            response = "CON shyiramo ingano y'"+str(product)+" ushaka mu biro \n"
 
 
         elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
@@ -48,8 +47,8 @@ def ussdApp(request):
 
 
         elif text == '1*2':
-            product ="Imbuto za chia z'umukara"
-            response ="CON shyiramo ingano y'imbuto ushaka mu biro "+str(product)+"\n"
+            product ="imbuto za chia z'umukara"
+            response ="CON shyiramo ingano y'"+str(product)+" ushaka mu biro \n"
 
 
         elif category =='1*2' and int(len(level)) == 3 and str(level[2]) in  str(level):
@@ -64,10 +63,10 @@ def ussdApp(request):
             response = "CON Igihingwa cya chia seed ni imbuto zifite ibara ry'umweru cq ry'umukara zikomoka"
             response += "muri Amarica y'amajyepfo ho muri Mexico na Quatemara. Urubuto rumwe rwa chia seed"
             response += "rupima umurambararo wa milimetero imwe (1). Ni ubwoko bw'imbuto z'ibinyampeke."
-            response += "Zishobara kuribwa uko zakabaye zivanywe mu murima, zishobora gusebwamo "
+            response += "Zishobora kuribwa uko zakabaye zivanywe mu murima, zishobora gusebwamo "
             response += "ifu cyangwa se zigakorwamo amavuta yaba ayo kurya cyangwa se ayo kwisiga."
             response += "Izi mbuto iyo uzishyize mu mazi, rumwe rukurura amazi akubye incuro 12 uburemere "
-            response += "bwarwo rukabyimba. izi mbuto ni igihingwa kerera amezi atatu gusa kandi ikiro kimwe"
+            response += "bwarwo, maze rukabyimba. izi mbuto ni igihingwa kerera amezi atatu gusa kandi ikiro kimwe"
             response += "cyazo kigura nibura amafaranga y'u Rwanda 3000. ni ukuvuga ko ikiro kimwe cya "
             response += "chia seed kinganya agaciro mu mafaranga n'ibiro 15 by'ikawa y'ibitumbwe yereye"
             response += "amezi 12, kingana n'ibiro 20 by'ibijumba, kingana n'ibiro 5 by'ibishyimbo uramutse"
