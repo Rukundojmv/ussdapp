@@ -42,11 +42,12 @@ def ussdApp(request):
 
         elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
             response = "CON Shyiramo amafaranga \n"
-            if int(level[2]) % int(3000) != 0:
-                response = "CON Washyizemo amafaranga make \n"
 
         elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
+            if int(level[3]) % int(3000) != 0:
+                response = "CON Washyizemo amafaranga make \n"
+            else:
+                response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
 
 
         elif text == '1*2':
