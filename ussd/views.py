@@ -45,7 +45,7 @@ def ussdApp(request):
 
         elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
             if int(level[3]) != int(level[2]) * int(3000):
-                response = "CON Washyizemo amafaranga make \n"
+                response = "END Washyizemo amafaranga make \n"
             else:
                 response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
 
