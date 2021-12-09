@@ -25,7 +25,8 @@ def ussdApp(request):
         if text == '':
             response =  "CON Ikaze kuri chiafarm \n"
             response += "1. Kugura igihingwa cya chia \n"
-            response += "2. Kumenya amakuru y'igihingwa \n"
+            response += "2. Amakuru y'ibanze y'igihingwa cya chia seeds ukwiye "
+            response += " gusoma mbere yo kugura iki gihingwa"
 
 
         elif text == '1':
