@@ -67,7 +67,7 @@ def ussdApp(request):
             response = "CON Hitamo amakuru y'igihingwa \n"
             response += "1. Amakuru y'ibanze \n"
             response += "2. Uko imbuto za chia zihingwa \n"
-            response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n"
+            response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n \n"
             response += "4. Intungamubiri ziboneka mu mbuto za chia \n"
 
 
