@@ -63,8 +63,8 @@ def ussdApp(request):
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
 
-        else:
-            response = "Hitamo amakuru y'igihingwa \n"
+        elif text == '2':
+            response = "CON Hitamo amakuru y'igihingwa \n"
             response += "1. Amakuru y'ibanze \n"
             response += "2. Uko imbuto za chia zihingwa \n"
             response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n"
