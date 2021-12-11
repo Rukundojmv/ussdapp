@@ -23,14 +23,14 @@ def ussdApp(request):
         #  our application menu
 
         if text == '':
-            response =  "CON Ikaze kuri chiafarm \n"
+            response =  "CON Ikaze kuri chiafarm \n\n"
             response += "1. Kugura igihingwa cya chia \n"
             response += "2. Iby'ibanze ukwiye kumenya ku gihingwa "
             response += " cya chia seeds mbere y'uko ukigura"
 
 
         elif text == '1':
-            response = "CON Hitamo ubwoko bw'igihingwa \n"
+            response = "CON Hitamo ubwoko bw'igihingwa \n\n"
             response += "1. Imbuto za chia z'umweru \n"
             response += "2. Imbuto za chia z'umukara"
 
@@ -64,10 +64,10 @@ def ussdApp(request):
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
 
         elif text == '2':
-            response = "CON Hitamo amakuru y'igihingwa \n"
+            response = "CON Hitamo amakuru y'igihingwa \n\n"
             response += "1. Amakuru y'ibanze \n"
-            response += "2. Uko imbuto za chia zihingwa \n\n"
-            response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n\n"
+            response += "2. Uko imbuto za chia zihingwa \n"
+            response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n"
             response += "4. Intungamubiri ziboneka mu mbuto za chia \n"
 
 
