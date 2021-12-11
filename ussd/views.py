@@ -70,6 +70,7 @@ def ussdApp(request):
             response += "3. Imikoreshereze y'imbuto za chia n'agaciro kazo \n"
             response += "4. Intungamubiri ziboneka mu mbuto za chia \n"
 
+
         elif text == '2*1':
             response = "CON Igihingwa cya chia seed ni imbuto zifite ibara ry'umweru cq ry'umukara zikomoka"
             response += "muri Amarica y'amajyepfo ho muri Mexico na Quatemara. Urubuto rumwe rwa chia seed"
@@ -78,14 +79,18 @@ def ussdApp(request):
             response += "bwarwo, maze rukabyimba. Izi mbuto ni igihingwa kerera amezi atatu gusa kandi "
             response += "ikiro kimwe cyazo kigura nibura amafaranga y'u Rwanda 3000."
             response += "Izi mbuto zikaba zarageze mu Rwanda mu mwaka wa 2017."
+
+
         elif text == '2*2':
             response = "CON ibiro 2 by'izi mbuto bitera hegitari y'ubutaka maze mu mezi atatu zikaba "
             response += "zeze ibiro igihumbi! Ikindi kiza kurushaho ni uko igihingwa cya chia seed "
             response += "gihingwa hadakoreshejwe ifumbire mva ruganda cyangwa se imiti yica udukoko."
             response += "Uburyo zihingwa, barazitera bagashyiramo ifumbire y'imborera bakazuhira "
             response += "bihagije ubundi zikera."
+
+
         elif text == '2*3':
-            response == "CON Imbuto za chia seeds zishobora kuribwa uko zakabaye zivanywe mu murima, "
+            response = "CON Imbuto za chia seeds zishobora kuribwa uko zakabaye zivanywe mu murima, "
             response += "zishobora gusebwamo ifu cyangwa se zigakorwamo amavuta yaba ayo kurya"
             response += " cyangwa se ayo kwisiga. Mu gaciro, ikiro kimwe cy'igihingwa cya chia seeds "
             response += "kinganya agaciro mu mafaranga n'ibiro 15 by'ikawa y'ibitumbwe yereye amezi 12, "
