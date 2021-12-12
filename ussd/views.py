@@ -14,7 +14,7 @@ def ussdApp(request):
     if request.method == 'POST':
         session_id = request.POST.get("sessionId")
         service_code = request.POST.get("serviceCode")
-        phone_number =request.POST.get("phoneNumber")
+        phone_number = request.POST.get("phoneNumber")
         text = request.POST['text']
         level = text.split('*')
         category = text[:3]
@@ -36,15 +36,19 @@ def ussdApp(request):
 
 
         elif text == '1*1':
+            response = "CON shyiramo amazina yawe \n"    
+
+
+        elif category == '1*1' and int(len(level)) == 3 and str(level[2]) in str(level):
             product="imbuto za chia z'umweru "
             response = "CON shyiramo ingano y'"+str(product)+" ushaka mu biro \n"
 
 
-        elif category =='1*1' and int(len(level)) == 3 and str(level[2]) in  str(level):
+        elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
             response = "CON Shyiramo amafaranga \n"
 
-        elif category =='1*1' and int(len(level)) == 4 and str(level[3]) in  str(level):
-            if int(level[3]) != int(level[2]) * int(3000):
+        elif category =='1*1' and int(len(level)) == 5 and str(level[4]) in  str(level):
+            if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka \n"
             else:
                 response = "END Murakoze kugura imbuto za chia kuri chiafarm!  \n"
