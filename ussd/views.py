@@ -51,7 +51,7 @@ def ussdApp(request):
             if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
             else:
-                response = "END Murakoze kugura imbuto za chia kuri chiafarm!"
+                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
 
         elif text == '1*2':
             response = "CON shyiramo amazina yawe \n"
@@ -66,10 +66,10 @@ def ussdApp(request):
             response = "CON Shyiramo amafaranga  \n"
 
         elif category =='1*2' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            if int(level[4] != int(level[3]) * int(3000)):
+            if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
             else:    
-                response = "END Murakoze kugura imbuto za chia kuri chiafarm!"
+                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
 
