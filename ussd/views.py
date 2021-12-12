@@ -104,5 +104,5 @@ def ussdApp(request):
             response += "gukoreshwa nk'ibiryo cyangwa se nk'imiti. zimwe mu ntungamubiri ziboneka muri izi "
             response += "mbuto ni: \n -Calories: 138\n -Ibinure byiza(fat): 8.7g\n -Ubutare bwa fibure "
             response += "(fiber): 9.8g\n -Umunyu wa sodiyamu (sodium): 5mg\n -Ibinyamasukari (carbohydrates): "
-            response += "12g\n n'intangamubiri za poroteyini (protein):4.7g."
+            response += "12g\n -N'intangamubiri za poroteyini (protein):4.7g."
         return HttpResponse(response)
