@@ -49,19 +49,19 @@ def ussdApp(request):
 
         elif category =='1*1' and int(len(level)) == 5 and str(level[4]) in  str(level):
             if int(level[4]) == int(level[3]) * int(3000):
-                Product = "imbuto za chia z'umweru"
-                Name = level[2]
-                Quantity = level[3]
-                Price = level[4]
-                record = Chiacustomer(sessionId=session_id,
-                seviceCode=service_code,
-                phoneNumber=phone_number,
-                fullName=Name,
-                product=Product,
-                quantity=Quantity,
-                price=Price
-                )
-                record.save()
+                # Product = "imbuto za chia z'umweru"
+                # Name = level[2]
+                # Quantity = level[3]
+                # Price = level[4]
+                # record = Chiacustomer(sessionId=session_id,
+                # seviceCode=service_code,
+                # phoneNumber=phone_number,
+                # fullName=Name,
+                # product=Product,
+                # quantity=Quantity,
+                # price=Price
+                # )
+                # record.save()
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
             
             else:
