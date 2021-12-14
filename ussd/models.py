@@ -31,7 +31,7 @@ class Iteganyagihe(models.Model):
 
 
 
-class ChiaCustomer(models.Model):
+class Chiacustomer(models.Model):
     
     sessionId = models.CharField(max_length=255, null=True)
     serviceCode = models.CharField(max_length=255, null=True)
