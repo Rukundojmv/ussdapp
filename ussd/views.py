@@ -80,13 +80,13 @@ def ussdApp(request):
             if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
             else:   
-                record = chiaCustomer(phoneNumber = phone_number,
-                fullName = level[2],
-                product = "imbuto za chia z'umukara",
-                quantity = level[3],
-                price = level[4]
-                )
-                record.save() 
+                # record = chiaCustomer(phoneNumber = phone_number,
+                # fullName = level[2],
+                # product = "imbuto za chia z'umukara",
+                # quantity = level[3],
+                # price = level[4]
+                # )
+                # record.save() 
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================

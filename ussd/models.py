@@ -31,7 +31,7 @@ class Iteganyagihe(models.Model):
 
 
 
-class chiaCustomer(models.Model):
+class ChiaCustomer(models.Model):
     
     phoneNumber = models.CharField(max_length=255)
     fullName = models.CharField(max_length=255)
