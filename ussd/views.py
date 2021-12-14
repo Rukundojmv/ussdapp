@@ -48,9 +48,7 @@ def ussdApp(request):
             response = "CON Shyiramo amafaranga \n"
 
         elif category =='1*1' and int(len(level)) == 5 and str(level[4]) in  str(level):
-            if int(level[4]) != int(level[3]) * int(3000):
-                response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
-            else:
+            if int(level[4]) == int(level[3]) * int(3000):
                 Product = "imbuto za chia z'umweru"
                 Name = level[2]
                 Quantity = level[3]
@@ -65,7 +63,10 @@ def ussdApp(request):
                 )
                 record.save()
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
-
+            
+            else:
+                response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
+                
         elif text == '1*2':
             response = "CON shyiramo amazina yawe \n"
 
