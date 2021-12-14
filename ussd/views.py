@@ -55,7 +55,7 @@ def ussdApp(request):
                 Name = level[2]
                 Quantity = level[3]
                 Price = level[4]
-                record = ChiaCustomer(sessionID=session_id,
+                record = ChiaCustomer(sessionId=session_id,
                 seviceCode=service_code,
                 phoneNumber=phone_number,
                 fullName=Name,
