@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from datetime import date, datetime
 # Create your models here.
 class Idafarmuser(models.Model):
     
@@ -25,3 +25,14 @@ class Iteganyagihe(models.Model):
     def __str__(self):
         return self.phonNumber
 
+class chiaCustomer(models.Model):
+    
+    phoneNumber = models.CharField(max_length=255)
+    fullName = models.CharField(max_length=255)
+    product = models.CharField(max_length=255)
+    quantity = models.CharField(max_length=255)
+    price = models.CharField(max_length=255)
+    purchasedTime = models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return self.fullName

@@ -40,7 +40,7 @@ def ussdApp(request):
 
 
         elif category == '1*1' and int(len(level)) == 3 and str(level[2]) in str(level):
-            product="imbuto za chia z'umweru "
+            product="imbuto za chia z'umweru"
             response = "CON shyiramo ingano y'"+str(product)+" ushaka mu biro \n"
 
 
@@ -51,6 +51,13 @@ def ussdApp(request):
             if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
             else:
+                record = chiaCustomer(phoneNumber = phone_number,
+                fullName = level[2],
+                product = "imbuto za chia z'umweru",
+                quantity = level[3],
+                price = level[4]
+                )
+                record.save()
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
 
         elif text == '1*2':
@@ -68,7 +75,14 @@ def ussdApp(request):
         elif category =='1*2' and int(len(level)) == 5 and str(level[4]) in  str(level):
             if int(level[4]) != int(level[3]) * int(3000):
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
-            else:    
+            else:   
+                record = chiaCustomer(phoneNumber = phone_number,
+                fullName = level[2],
+                product = "imbuto za chia z'umukara",
+                quantity = level[3],
+                price = level[4]
+                )
+                record.save() 
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
