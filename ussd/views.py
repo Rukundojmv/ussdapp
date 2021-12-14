@@ -55,11 +55,11 @@ def ussdApp(request):
                 Name = level[2]
                 Quantity = level[3]
                 Price = level[4]
-                record = chiaCustomer(phoneNumber = phone_number,
-                fullName = Name,
-                product = Product,
-                quantity = Quantity,
-                price = Price
+                record = chiaCustomer(phoneNumber=phone_number,
+                fullName=Name,
+                product=Product,
+                quantity=Quantity,
+                price=Price,
                 )
                 record.save()
                 response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"

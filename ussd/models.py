@@ -25,6 +25,12 @@ class Iteganyagihe(models.Model):
     def __str__(self):
         return self.phonNumber
 
+
+
+
+
+
+
 class chiaCustomer(models.Model):
     
     phoneNumber = models.CharField(max_length=255)
