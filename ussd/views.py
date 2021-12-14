@@ -62,7 +62,7 @@ def ussdApp(request):
                 # price=Price
                 # )
                 # record.save()
-                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
+                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chiaseeds.rw!"
             
             else:
                 response = "END Washyizemo amafaranga atajyanye n'ibiro by'imbuto ushaka"
@@ -90,7 +90,7 @@ def ussdApp(request):
                 # price = level[4]
                 # )
                 # record.save() 
-                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chia.rw!"
+                response = "END Murakoze kugura imbuto za chia ku rubuga rwa chiaseeds.rw!"
          
         #  ======================== AMAKURU Y'IGIHINGWA CYA CHIA SEED ==================
 
