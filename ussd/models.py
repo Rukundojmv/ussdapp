@@ -33,6 +33,8 @@ class Iteganyagihe(models.Model):
 
 class ChiaCustomer(models.Model):
     
+    sessionId = models.CharField(max_length=255, null=True)
+    serviceCode = models.CharField(max_length=255, null=True)
     phoneNumber = models.CharField(max_length=255)
     fullName = models.CharField(max_length=255)
     product = models.CharField(max_length=255)
